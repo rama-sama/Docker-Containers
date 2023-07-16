@@ -1,3 +1,4 @@
+```
 version: "2.1"
 services:
   homeassistant:
@@ -13,3 +14,4 @@ services:
     ports:
       - 8123:8123 #optional
     restart: unless-stopped
+```
