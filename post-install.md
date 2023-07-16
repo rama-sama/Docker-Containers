@@ -32,6 +32,11 @@ cat /opt/mosquitto/config/mqttuser
 homeassistant:$7$101$q7VtJJ/E*******7$1I******************************************b/G**************************************A==
 ```
 
+Restart Mosqutto
+```
+docker compose restart mosquitto
+```
+
 # Node-RED
 ```
 sudo chown -R 1000:1000 /opt/nodered/data
