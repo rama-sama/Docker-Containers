@@ -37,6 +37,11 @@ Restart Mosqutto
 docker compose restart mosquitto
 ```
 
+Mosquitto log should show container restarted
+```
+sudo cat /opt/mosquitto/log/mosquitto.log
+```
+
 # Node-RED
 ```
 sudo chown -R 1000:1000 /opt/nodered/data
