@@ -21,6 +21,17 @@ allow_anonymous false
 password_file /mosquitto/config/mqttuser
 ```
 
+Mosquitto users
+```
+docker exec -it mosquitto mosquitto_passwd -c /mosquitto/config/mqttuser homeassistant
+```
+
+Check Mosquitto users
+```
+cat /opt/mosquitto/config/mqttuser
+homeassistant:$7$101$q7VtJJ/E*******7$1I******************************************b/G**************************************A==
+```
+
 # Node-RED
 ```
 sudo chown -R 1000:1000 /opt/nodered/data
