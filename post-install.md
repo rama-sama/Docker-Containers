@@ -1,4 +1,4 @@
-# Home Assistant
+# InfluxDB
 ```
 cd /opt/homeassistant/config/
 sudo vim configuration.yaml
