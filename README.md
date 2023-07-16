@@ -1,1 +1,16 @@
-# test
+---
+version: "2.1"
+services:
+  homeassistant:
+    image: lscr.io/linuxserver/homeassistant:latest
+    container_name: homeassistant
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /opt/homeassistant/data:/config
+    ports:
+      - 8123:8123 #optional
+    restart: unless-stopped
