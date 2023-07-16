@@ -37,9 +37,9 @@ influxdb:
 
 Set the following envirionment variables via `.env` file
 ```
-influxdb_host="<host>"
-influxdb_token="<influxdbtoken>"
-influx_org="<influxorg>"
+INFLUXDB_HOST="<host>"
+INFLUXDB_TOKEN="<influxdbtoken>"
+INFLUXDB_ORG="<influxorg>"
 ```
 
 Add the following to secrets.yaml
