@@ -1,4 +1,3 @@
-```
 version: "3.0"
 services:
   heimdall:
@@ -14,4 +13,3 @@ services:
       - 80:80
       - 443:443
     restart: unless-stopped
-```
