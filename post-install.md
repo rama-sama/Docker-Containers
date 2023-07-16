@@ -35,6 +35,13 @@ influxdb:
       - person
 ```
 
+Set the following envirionment variables via `.env` file
+```
+influxdb_host="<host>"
+influxdb_token="<influxdbtoken>"
+influx_org="<influxorg>"
+```
+
 Add the following to secrets.yaml
 ```
 mariadb: "mysql://homeassistant:mariadbhapassword@mariadbhost:3306/ha_db?charset=utf8mb4"
