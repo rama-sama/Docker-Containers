@@ -3,10 +3,11 @@ services:
   portainer:
     image: portainer/portainer-ce:latest
     ports:
-      - 9443:9443
-      volumes:
-        - data:/data
-        - /var/run/docker.sock:/var/run/docker.sock
+      - "9000:9000/tcp"
+      - "9443:9443/tcp"
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
   heimdall:
     image: lscr.io/linuxserver/heimdall:latest
@@ -14,7 +15,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=America/Los_Angeles
     volumes:
       - /opt/heimdall/config:/config
     ports:
@@ -34,3 +35,34 @@ services:
     ports:
       - 8123:8123 #optional
     restart: unless-stopped
+    depends_on:
+      - mariadb
+      - influxdb
+      - mosquitto
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883/tcp"
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - /opt/mosquitto/config:/mosquitto/config
+      - /opt/mosquitto/data:/mosquitto/data
+      - /opt/mosquitto/log:/mosquitto/log
+    stdin_open: true
+    tty: true
+  nodered:
+    container_name: nodered
+    image: nodered/node-red
+    restart: unless-stopped
+    ports:
+      - "1880:1880/tcp"
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - /opt/nodered/data:/data
+    depends_on:
+      - homeassistant
+      - mosquitto
