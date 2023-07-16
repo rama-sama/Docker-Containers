@@ -4,7 +4,7 @@ cd /opt/homeassistant/config/
 sudo vim configuration.yaml
 ```
 
-Add the following
+Add the following to /opt/homeassistant/configuration.yaml
 ```
 recorder:
   db_url: !secret mariadb
@@ -42,7 +42,7 @@ INFLUXDB_TOKEN="<influxdbtoken>"
 INFLUXDB_ORG="<influxorg>"
 ```
 
-Add the following to secrets.yaml
+Add the following to /opt/homeassistant/secrets.yaml
 ```
 mariadb: "mysql://homeassistant:mariadbhapassword@mariadbhost:3306/ha_db?charset=utf8mb4"
 
@@ -57,6 +57,7 @@ cd /opt/mosquitto/config/
 sudo wget https://raw.githubusercontent.com/eclipse/mosquitto/master/mosquitto.conf
 ```
 
+Add the following to /opt/mosquitto/config/mosquitto.conf
 ```
 # add the following lines at the end
 
