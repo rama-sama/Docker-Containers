@@ -49,7 +49,7 @@ services:
     ports:
       - "3306:3306/tcp"
     environment:
-      - TZ=Europe/Brussels
+      - TZ=America/Los_Angeles
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_HA_DATABASE}
       - MYSQL_USER=${MYSQL_HA_USER}
