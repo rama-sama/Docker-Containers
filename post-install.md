@@ -83,7 +83,6 @@ docker exec -it mosquitto mosquitto_passwd -c /mosquitto/config/mqttuser homeass
 Check Mosquitto users
 ```
 cat /opt/mosquitto/config/mqttuser
-homeassistant:$7$101$q7VtJJ/E*******7$1I******************************************b/G**************************************A==
 ```
 
 Restart Mosqutto
